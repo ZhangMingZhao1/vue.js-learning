@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+<script>
+    
+    //let和const声明变量和常量 var
+
+    //01-作用域只局限于当前代码块
+/*    {
+        var str = "张三";
+        console.log(str);
+
+        let str1 = "李四";
+        console.log(str1);
+    }
+    //++++张三,str1 is not defined
+    //let的作用域比var体现的更"明显"一些
+    console.log("++++" + str)
+    console.log("++++" + str1)*/
+    //02-使用let声明的变量作用域不会被提升
+/*    {
+
+        console.log(str1) //undefined
+        var str1 = "张三";
+
+        //上面等同于
+        var str1;
+        console.log(str1); //undefined
+        str1 = "张三"
+    }*/
+    //报错“str is not defined”
+/*    {
+        console.log(str)
+        let str = "李四"
+    }*/
+
+    //03在相同的作用域下不能声明相同的变量
+/*    {
+        //不会报错,后面会覆盖前面的
+        var str1 = "张三";
+        var str1 = "李四";
+        console.log(str1);
+    }*/
+/*    {
+        //报错 "Identifier 'str2' has already been declared"
+        let str2 = "张三";
+        let str2 = "李四";
+        console.log(str2）
+    }*/
+    //04-for循环体现let的父子作用域
+//    var btns = document.querySelectorAll("button");
+/*    for(var i = 0; i < btns.length; i++) {
+        // 点击事件是异步,i
+        btns[i].onclick = function () {
+            alert("点击了第"+i+"个按钮");
+        }
+    }*/
+    //传统解决思路,闭包
+/*    for(var i = 0; i < btns.length; i++) {
+        (function (i) {
+            btns[i].onclick = function () {
+                alert("点击了第"+i+"个按钮");
+            }
+        })(i);
+    }*/
+    //ES6中直接用let，因为有作用域的概念
+/*    let btns = document.querySelectorAll("button");
+    for(let i = 0; i < btns.length; i++) {
+        // 点击事件是异步,i
+        btns[i].onclick = function () {
+            alert("点击了第"+i+"个按钮");
+        }
+    }*/
+
+    //我们再测试一下
+/*    for(var i = 0; i < 5;i++) {
+        let i = 20;
+        console.log(i);
+    }*/
+
+</script>
+</body>
+</html>
