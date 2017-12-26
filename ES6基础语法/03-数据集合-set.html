@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    </head>
+    <body>
+
+    <script>
+        //1.创建集合
+        let set = new Set(['张三','李四','李四']);
+        console.log(set);
+
+        //2.属性
+        console.log(set.size);
+
+        //03-四个方法 add delete has clear
+        set.add('hehe').add('dada');
+        console.log(set);
+        console.log(set.delete('dada'));
+        console.log(set);
+
+        console.log(set.has('张三'));
+        console.log(set.has('张三1'));
+
+        set.clear();//这个就返回值了
+        console.log(set);
+
+    </script>
+    </body>
+    </html>

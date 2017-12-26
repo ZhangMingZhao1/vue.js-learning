@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+/*    //01-只在当前的代码块有效
+    {
+        const a = "zhangsan"
+    }
+    console.log(a);//报错*/
+    //02-作用域不会被提升
+    //03-在一个作用域里不能重复声明
+/*    //04-申明的常量必须立即赋值
+{
+    const name;
+    name = "zhangsan";
+    console.log(name);
+}*/
+    {
+        const obj = {name : "张三"};
+        console.log(obj);
+
+        obj.name = "李四";
+        console.log(obj);
+    }
+
+</script>
+</body>
+</html>

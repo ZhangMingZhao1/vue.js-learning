@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    </head>
+    <body>
+
+    <script>
+/*        //对象的局限性
+        let obj1 = {a:1},obj2 = {b:2},obj = {};
+        console.log(obj);
+        obj.name = '张三';
+        obj[obj1] ="天空";
+        console.log(obj);
+        obj[obj2] = "大海"
+        console.log(obj);//被覆盖
+
+        //原因就是内部把键做了字符串处理化
+        console.log(obj1.toString());
+        console.log(obj2.toString());
+        console.log(obj1.toString() === obj2.toString());//true*/
+
+        //引入Map
+
+        //1.创建一个Map
+        let obj1 = {a:1},obj2 = {b:2},obj = {};
+        const  map = new Map([
+            ['name','张三'],
+            ['age','18'],
+            ['sex','男'],
+            [obj1,'今天天气很好'],
+            [obj2,'适合敲代码'],
+            ['age','50'],//覆盖前面的18
+            [[1,2],'hh'],
+        ]);
+        console.log(map);
+        console.log(map.size); //6 同样的键会被覆盖
+
+        //set和get
+        //set新增加键值对
+        map.set('friends',['赵六','王五']).set(['dog'],'小花');
+        //set获取
+        console.log(map.get('name'));
+        console.log(map.get(obj1));
+
+        //delete ,通过键删除对
+        map.delete(obj1)
+        console.log(map);
+
+        //has 是否存在该键
+        console.log(map.has(obj1)); //false
+        console.log(map.has(obj2)); //true
+
+        //clear 清空
+
+        //keys,values,entries
+        console.log(map.keys());
+        console.log(map.values());
+        console.log(map.entries());//获取键值对
+
+        //遍历
+        map.forEach(function (value,key) {
+            console.log(key + ":" + value);
+        })
+
+        //注意事项,对象都为空时，不会被覆盖，因为在堆区新开的对象地址都是不一样的
+        map.set({},'hahaha');
+        map.set({},'hehehehe');
+        console.log(map);
+        console.log({} === {});//false
+
+    </script>
+    </body>
+    </html>
