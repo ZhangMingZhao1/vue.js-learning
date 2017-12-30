@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-内置对象扩展</title>
+    <style>
+        .test {
+            width: 100px;
+            height:100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+<script src = "js/underscore-min.js"></script>
+<script>
+/*    //1.模版字符串
+    let str = '适合敲代码';
+    let classname = 'test';
+    let html = `<html>
+                    <head></head>
+                    <body>
+                        <p>今天的天气很好!</p>
+                        <div class = '${classname}'>${str}</div>
+                    </body>
+                 </html>`
+    console.log(html);*/
+/*    //2.数组的扩展
+    //Array.from,转换成数组
+    let allLis = document.querySelectorAll('li');
+    console.log(allLis);
+    console.log(Array.isArray(allLis));;//false
+    console.log(Array.from(allLis));
+    console.log(Array.isArray(Array.from(allLis)));;//true*/
+
+    //Array.of()
+    console.log(Array.of(1, 2, 3, 4));
+    console.log(Array.of('张三', '李四', '王五'));
+</script>
+</body>
+</html>
