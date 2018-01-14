@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-内置对象扩展</title>
+</head>
+<body>
+
+
+<script src = "js/underscore-min.js"></script>
+<script>
+/*    // 1.形参设置默认值
+    function sum(num1 = 20, num2 = 10) {
+        console.log(num1 + num2);
+    }
+    sum();*/
+
+/*    function sum() {
+        let ans= 0 ;
+        for(let value of arguments) {
+            ans += value;
+        }
+        return ans;
+    }
+
+    console.log(sum(1, 2, 3));*/
+
+    //es写法 支持多样化的参数，替换arguments，我认为是js里面的重载把
+    function sum(name,sex,...nums) {
+        let ans= 0 ;
+        console.log(name);
+        console.log(sex);
+        for(let value of nums) {
+            ans += value;
+    }
+        return ans;
+    }
+    console.log(sum('大哥','男',1,2,3));
+
+</script>
+</body>
+</html>

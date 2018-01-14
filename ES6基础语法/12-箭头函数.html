@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-内置对象扩展</title>
+</head>
+<body>
+
+
+<script src = "js/underscore-min.js"></script>
+<script>
+    //箭头函数
+    // () => {}
+    let sum = (num1,num2) => {return num1 + num2;};
+    console.log(sum(100,300));
+    let nameArr = ['张三','李四','王五'];
+    nameArr.forEach((value,index)=>{
+        console.log(index + ';' + value);
+    });
+
+    function demo() {
+        setTimeout(function () {
+            console.log(this);//Window
+        },1000);
+
+        //箭头函数可以直接绑定对象，传统的可能还要用bind，apply
+        setTimeout(()=>{
+            console.log(this);//Object
+        },1000);
+    }
+
+    let obj = {};
+    demo.call(obj);
+
+
+</script>
+</body>
+</html>
