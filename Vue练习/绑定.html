@@ -1,0 +1,41 @@
+<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+<!--<div id="app">{{value}}</div>-->
+<!--<script>-->
+    <!--new Vue({-->
+        <!--el: '#app',-->
+        <!--data(){-->
+            <!--return {value:42}-->
+        <!--},-->
+        <!--mounted(){-->
+            <!--setTimeout(this.a,1000)-->
+        <!--},-->
+        <!--methods:{-->
+            <!--a(){-->
+                <!--this.value++-->
+                <!--console.log(this.value)-->
+                <!--setTimeout(this.a,1000)-->
+            <!--}-->
+        <!--}-->
+    <!--})-->
+<!--</script>-->
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="app">
+    <input v-bind:value="finalvalue">
+</div>
+
+<script>
+    var a = new Vue({
+        el: '#app',
+        computed: {
+            finalvalue: function () {
+                return this.value + 1
+            }
+        },
+        data(){
+            return {
+                value:41
+            }
+        }
+    })
+</script>

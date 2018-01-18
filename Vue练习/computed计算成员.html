@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="app">
+    <input v-model="money">
+    <span>{{RMB}}</span>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            money:1.10
+        },
+        computed:{
+            RMB:function(){
+                return '￥'+this.money
+            }
+        }
+    })
+</script>

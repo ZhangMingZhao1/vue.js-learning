@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="app">
+    <div style="color:red;fontSize:13px; ">abc</div>
+    <div v-bind:style="[s1,s2]">abc</div>
+    <div v-bind:style="styleObject">abc</div>
+</div>
+<script>
+    var a= new Vue({
+        el: '#app',
+        data: {
+            styleObject: {
+                color: 'red',
+                fontSize: '13px'
+            },
+            s1: {
+                color: 'red',
+            },
+            s2: {
+                fontSize: '13px'
+            }
+        }
+    })
+</script>
