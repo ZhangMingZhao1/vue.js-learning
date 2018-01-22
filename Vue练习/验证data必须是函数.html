@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <my-btn></my-btn>
+        <my-btn></my-btn>
+        <my-btn></my-btn>
+        <my-btn></my-btn>
+        <my-btn></my-btn>
+    </div>
+    <!--祖册一个组件-->
+    <template id='my_btn'>
+        <button @click="counter += 1">点击的次数{{counter}}</button>
+    </template>
+
+    <script src="js/vue.min.js"></script>
+    <script>
+        Vue.component('my-btn', {
+            template: '#my_btn',
+            data() {
+                return {
+                    counter: 0
+                }
+            }
+        })
+
+        new Vue({
+            el: '#app',
+        })
+    </script>
+</body>
+</html>
